@@ -1,0 +1,84 @@
+// Test all possible combinations of AOL data.  Used for integration testing.
+
+
+telescope "finder" { }
+telescope "main" {
+    brand "orion"
+    model "skyview Pro"
+    type "maksutov-cassegrain"
+    aperture150mm
+    focallength 1200mm
+    focalratio f/12
+    mount "Equatorial"
+    note "Bought in Summer 2009"
+}
+
+telescope "other" {
+    focallength 5.5 in
+    focalratio f/12.5
+}
+
+observation 2018/05/27 { }
+
+
+//used to 'define' a date
+observation 2009/24/09 {
+    time 20:20 to 20:30
+    location "kutztown"
+
+    latitude 10o20'40.0"N
+    longitude +29.0o w
+
+    weather "clear"
+    seeing 5
+    transparency 5
+    temperature 5.5 k
+    humidity 20.0%
+    wind 5.5 mph nw
+    note "really bundled up, but started getting cold later on"
+
+    target "Jupiter" {}
+    target "andromeda galaxy" {
+        time 21:00 to 23:00
+        altitude 24o 23' 24.0"
+        azimuth 350.0o
+
+        designation m 31
+    }
+    target "Jupiter" {
+        designation ngc 50
+        telescopeid "finder"
+
+        directory "C:/Users/kevin/Desktop/images/" {
+            image "jupiter.jpg"
+            image "jupiter2.jpg" "looks okay"
+        }
+    }
+    target "Mars" {
+        time 20:00
+        type "binary system"
+        designation NGC "31"
+        constellation "Canis Major"
+
+        rightascension 20h40m50.0s
+        declination 40o20'10.0"
+
+        filter "Red"
+        magnitude 5.5
+        eyepiece 8 mm "celestron"
+        telescopeid "main"
+
+        directory "~/Pictures/astrophotography/" {
+            image "/mars/1.jpg" "Olympus Mons"
+        }
+        note "test"
+
+    }
+}
+
+observation 2018/05/28 {
+    time 20:20
+    temperature 100.0 C
+    humidity 5%
+    wind 5.5 km/h N
+}

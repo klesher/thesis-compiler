@@ -1,0 +1,68 @@
+telescope "main"
+{
+    model "skyview Pro"
+    type "maksutov-cassegrain"
+    aperture 150 mm
+    focallength 1200mm
+    focalratio f/12
+    mount "Equatorial"
+    note "Bought in Summer 2009"
+}
+
+//used to 'define' a date
+observation 2009/24/09
+{
+    time 20:20 to 20:30
+    location "kutztown"
+
+    //Test the different geoCoordinate possibilities
+    //    latitude 10.0oN
+    //latitude 10o20'40"N
+    //latitude +0o40'2"S
+    //longitude -90o0'4"E
+    //longitude 40.0o w
+    //longitude + 29.0o w
+    //latitude -0.0on
+
+    weather "clear"
+    seeing 5
+    transparency 5
+    temperature 5.5 k
+    temperature 100.0 C
+    humidity 20.0%
+    wind 5.5 mph nw
+    wind 5.5 mph n
+    note "really bundled up, but started getting cold later on"
+
+    target "mars" {}
+    target "sirius"
+    {
+        type "binary system"
+        designation ngc "31"
+        constellation "Canis Major"
+
+        //Test the different coordinate possibilities
+        //rightascension 20h40m50.0s
+        //declination 40o20'10"
+        //altitude +0o1'4"
+        //azimuth -90o0'2"
+        //declination 40.4o
+        //altitude + 29.122o
+        //azimuth -0.0o
+        filter "Red"
+        magnitude 5.5
+        magnitude +2.3
+        magnitude -2.0
+ //       eyepiece 4 mm
+ //       eyepiece 8 mm "celestron plossi"
+        telescopeid "main"
+        directory "~/Pictures/astrophotography/"
+        {
+            image "/mars/1.jpg" "Olympus Mons"
+            image "/mars/2.jpg" "Northern Pole"
+            image "/mars/3.jpg"
+            note "accidently shot in low quality"
+        }
+        note "test"
+    }
+}
